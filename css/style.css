@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-    background-color: #e8eaf0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
 }
@@ -220,7 +220,7 @@ header {
 /* 컨텐츠 영역 */
 .content-area {
     padding: 30px;
-    background-color: #e8eaf0;
+    background-color: #f5f7fa;
     min-height: calc(100vh - 60px);
 }
 
