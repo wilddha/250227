@@ -3,133 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>결제 내역 수정 - PG 관리자</title>
+    <title>결제 내역 수정 - Sunshine Pay 관리자센터</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>결제 내역 수정</h1>
-            <div class="header-right">
-                <button class="btn btn-secondary">로그아웃</button>
+    <div class="admin-layout">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAY</div>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="active">수기결제</a></li>
+                </ul>
             </div>
-        </header>
-
-        <div class="tabs">
-            <button class="tab active">내역</button>
-            <button class="tab">정산</button>
-            <button class="tab">추천인</button>
-        </div>
-
-        <div class="section-spacing">
-            <div class="section-header blue">▼ 추천인 정보</div>
-            <div class="info-grid">
-                <div class="label">추천인 ID</div>
-                <div class="value">9999</div>
-
-                <div class="label">수수료</div>
-                <div class="value">2 원 (0.1%)</div>
-
-                <div class="label">이체수수료</div>
-                <div class="value">330 원</div>
-
-                <div class="label">입금금액</div>
-                <div class="value text-red">-328 원 <span class="note">(이체수수료 제외)</span></div>
-
-                <div class="label">입금 은행</div>
-                <div class="value">
-                    <input type="text" value="한국">
-                </div>
-
-                <div class="label">계좌번호</div>
-                <div class="value">
-                    <input type="text" value="123456">
-                </div>
-
-                <div class="label">예금주명</div>
-                <div class="value">
-                    <input type="text" value="이순신">
-                </div>
-
-                <div class="label">연락처</div>
-                <div class="value">010-6512-3040</div>
-
-                <div class="label">처리 상태</div>
-                <div class="value with-button">
-                    <select>
-                        <option>처리전</option>
-                        <option>입금완료</option>
-                        <option>보류</option>
-                    </select>
-                    <button class="btn btn-primary">처리</button>
-                </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAYMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#">실시간 결제내역</a></li>
+                </ul>
             </div>
-        </div>
-
-        <div class="section-spacing">
-            <div class="section-header green">▼ 고객 정보</div>
-            <div class="info-grid">
-                <div class="label">카드번호</div>
-                <div class="value">****-4191</div>
-
-                <div class="label">결제금액</div>
-                <div class="value">2,000 원</div>
-
-                <div class="label">이체수수료</div>
-                <div class="value">330 원</div>
-
-                <div class="label">환불금액</div>
-                <div class="value">1,602 원 (3.4%) <span class="note">(+수출,이체수수료 제외)</span></div>
-
-                <div class="label">환불 은행</div>
-                <div class="value">
-                    <input type="text" value="농협">
-                </div>
-
-                <div class="label">환불 계좌번호</div>
-                <div class="value">
-                    <input type="text" value="1234-1234-1234">
-                </div>
-
-                <div class="label">환불 예금주명</div>
-                <div class="value">
-                    <input type="text" value="홍길동">
-                </div>
-
-                <div class="label">전화번호</div>
-                <div class="value">
-                    <input type="text" value="01012341234">
-                </div>
-
-                <div class="label">처리 상태</div>
-                <div class="value with-button">
-                    <select>
-                        <option>처리전</option>
-                        <option>입금완료</option>
-                        <option>보류</option>
-                    </select>
-                    <button class="btn btn-success">처리</button>
-                </div>
-
-                <div class="label">메모</div>
-                <div class="value">
-                    <textarea placeholder="메모를 입력하세요"></textarea>
-                </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">SETTLEMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="settlement.html">실시간 정산조회</a></li>
+                </ul>
             </div>
-        </div>
-
-        <div class="section-spacing">
-            <div class="section-header orange">관리자 메모</div>
-            <div style="padding: 20px; border: 1px solid #ddd; border-top: none;">
-                <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;" placeholder="관리자 메모를 입력하세요"></textarea>
-                <div style="text-align: right; margin-top: 10px;">
-                    <button class="btn btn-warning">저장</button>
-                </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">BOARD</div>
+                <ul class="sidebar-menu">
+                    <li><a href="referral.html">공지사항</a></li>
+                </ul>
             </div>
-        </div>
+        </aside>
 
-        <div class="bottom-buttons">
-            <button class="btn btn-secondary" onclick="location.href='index.html'">목록</button>
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header>
+                <div class="logo">
+                    <span class="logo-sunshine">Sunshine</span>
+                    <span class="logo-pay">Pay</span>
+                    <span class="logo-subtitle">관리자센터</span>
+                </div>
+                <div class="header-right">
+                    <div class="header-icon">🔍</div>
+                    <div class="header-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- 컨텐츠 영역 -->
+            <div class="content-area">
+                <!-- 페이지 헤더 -->
+                <div class="page-header">
+                    <h2>결제 내역 수정</h2>
+                </div>
+
+                <!-- 추천인 정보 섹션 -->
+                <div class="section-spacing">
+                    <div class="section-header blue">▼ 추천인 정보</div>
+                    <div class="info-grid">
+                        <div class="label">추천인 ID</div>
+                        <div class="value">9999</div>
+
+                        <div class="label">수수료</div>
+                        <div class="value">2 원 (0.1%)</div>
+
+                        <div class="label">이체수수료</div>
+                        <div class="value">330 원</div>
+
+                        <div class="label">입금금액</div>
+                        <div class="value text-red">-328 원 <span class="note">(이체수수료 제외)</span></div>
+
+                        <div class="label">입금 은행</div>
+                        <div class="value">
+                            <input type="text" value="한국">
+                        </div>
+
+                        <div class="label">계좌번호</div>
+                        <div class="value">
+                            <input type="text" value="123456">
+                        </div>
+
+                        <div class="label">예금주명</div>
+                        <div class="value">
+                            <input type="text" value="이순신">
+                        </div>
+
+                        <div class="label">연락처</div>
+                        <div class="value">010-6512-3040</div>
+
+                        <div class="label">처리 상태</div>
+                        <div class="value with-button">
+                            <select>
+                                <option>처리전</option>
+                                <option>입금완료</option>
+                                <option>보류</option>
+                            </select>
+                            <button class="btn btn-primary">처리</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 고객 정보 섹션 -->
+                <div class="section-spacing">
+                    <div class="section-header green">▼ 고객 정보</div>
+                    <div class="info-grid">
+                        <div class="label">카드번호</div>
+                        <div class="value">****-4191</div>
+
+                        <div class="label">결제금액</div>
+                        <div class="value">2,000 원</div>
+
+                        <div class="label">이체수수료</div>
+                        <div class="value">330 원</div>
+
+                        <div class="label">환불금액</div>
+                        <div class="value">1,602 원 (3.4%) <span class="note">(+수출,이체수수료 제외)</span></div>
+
+                        <div class="label">환불 은행</div>
+                        <div class="value">
+                            <input type="text" value="농협">
+                        </div>
+
+                        <div class="label">환불 계좌번호</div>
+                        <div class="value">
+                            <input type="text" value="1234-1234-1234">
+                        </div>
+
+                        <div class="label">환불 예금주명</div>
+                        <div class="value">
+                            <input type="text" value="홍길동">
+                        </div>
+
+                        <div class="label">전화번호</div>
+                        <div class="value">
+                            <input type="text" value="01012341234">
+                        </div>
+
+                        <div class="label">처리 상태</div>
+                        <div class="value with-button">
+                            <select>
+                                <option>처리전</option>
+                                <option>입금완료</option>
+                                <option>보류</option>
+                            </select>
+                            <button class="btn btn-success">처리</button>
+                        </div>
+
+                        <div class="label">메모</div>
+                        <div class="value">
+                            <textarea placeholder="메모를 입력하세요"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 관리자 메모 섹션 -->
+                <div class="section-spacing">
+                    <div class="section-header orange">관리자 메모</div>
+                    <div style="background: white; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <textarea style="width: 100%; min-height: 100px; padding: 15px; border: 1px solid #dee2e6; border-radius: 4px; font-size: 14px;" placeholder="관리자 메모를 입력하세요"></textarea>
+                        <div style="text-align: right; margin-top: 15px;">
+                            <button class="btn btn-warning">저장</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 버튼 -->
+                <div class="bottom-buttons">
+                    <button class="btn btn-secondary" onclick="location.href='index.html'">목록</button>
+                </div>
+
+                <!-- 푸터 -->
+                <footer>
+                    <p>📄 원성페이먼츠 사업자 정보 ▼</p>
+                    <p>© 2025 WONSUNG PAYMENTS. All rights reserved.</p>
+                </footer>
+            </div>
         </div>
     </div>
 

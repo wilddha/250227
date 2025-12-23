@@ -3,65 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정산현황 - PG 관리자</title>
+    <title>실시간 정산조회 - Sunshine Pay 관리자센터</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>정산현황</h1>
-            <div class="header-right">
-                <span class="user-info">admin님</span>
-                <button class="btn btn-secondary">로그아웃</button>
+    <div class="admin-layout">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAY</div>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">수기결제</a></li>
+                </ul>
             </div>
-        </header>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAYMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#">실시간 결제내역</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">SETTLEMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="settlement.html" class="active">실시간 정산조회</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">BOARD</div>
+                <ul class="sidebar-menu">
+                    <li><a href="referral.html">공지사항</a></li>
+                </ul>
+            </div>
+        </aside>
 
-        <div class="tabs">
-            <button class="tab" onclick="location.href='index.html'">내역</button>
-            <button class="tab active" onclick="location.href='settlement.html'">정산</button>
-            <button class="tab" onclick="location.href='referral.html'">추천인</button>
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header>
+                <div class="logo">
+                    <span class="logo-sunshine">Sunshine</span>
+                    <span class="logo-pay">Pay</span>
+                    <span class="logo-subtitle">관리자센터</span>
+                </div>
+                <div class="header-right">
+                    <div class="header-icon">🔍</div>
+                    <div class="header-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- 컨텐츠 영역 -->
+            <div class="content-area">
+                <!-- 페이지 헤더 -->
+                <div class="page-header purple">
+                    <h2>실시간 정산조회</h2>
+                </div>
+
+                <!-- 알림 메시지 -->
+                <div class="alert info">
+                    <span>실제 정산금은 달라질 수 있습니다.</span>
+                </div>
+
+                <!-- 통계 카드 -->
+                <div class="stats-grid">
+                    <div class="stat-card purple">
+                        <div class="stat-card-title">오늘 결제</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">승인 0건 / 취소 0건</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-card-title">12월 누적</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">승인 4,000 / 취소 -4,000</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-title">오늘 승인</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">0건</div>
+                    </div>
+                    <div class="stat-card red">
+                        <div class="stat-card-title">오늘 취소</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">0건</div>
+                    </div>
+                </div>
+
+                <!-- 캘린더 -->
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <h3>2025. 12</h3>
+                        <div class="calendar-nav">
+                            <button>◀</button>
+                            <button>▶</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">일</div>
+                        <div class="calendar-day-header">월</div>
+                        <div class="calendar-day-header">화</div>
+                        <div class="calendar-day-header">수</div>
+                        <div class="calendar-day-header">목</div>
+                        <div class="calendar-day-header">금</div>
+                        <div class="calendar-day-header">토</div>
+
+                        <!-- 12월 1주 -->
+                        <div class="calendar-day sunday"><div class="calendar-day-number">1</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">2</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">3</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">4</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">5</div></div>
+                        <div class="calendar-day saturday today"><div class="calendar-day-number">6</div></div>
+                        <div class="calendar-day saturday"><div class="calendar-day-number">7</div></div>
+
+                        <!-- 12월 2주 -->
+                        <div class="calendar-day sunday"><div class="calendar-day-number">7</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">8</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">9</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">10</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">11</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">12</div></div>
+                        <div class="calendar-day saturday"><div class="calendar-day-number">13</div></div>
+
+                        <!-- 12월 3주 -->
+                        <div class="calendar-day sunday"><div class="calendar-day-number">14</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">15</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">16</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">17</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">18</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">19</div></div>
+                        <div class="calendar-day saturday"><div class="calendar-day-number">20</div></div>
+
+                        <!-- 12월 4주 -->
+                        <div class="calendar-day sunday"><div class="calendar-day-number">21</div></div>
+                        <div class="calendar-day">
+                            <div class="calendar-day-number">22</div>
+                            <div class="calendar-day-data">
+                                <div>승인 / 취소</div>
+                                <div>2 / 2</div>
+                                <div><strong>승인금액</strong> 4,000원</div>
+                                <div><strong>취소금액</strong> -4,000원</div>
+                                <div><strong>정산예정액</strong> 0원</div>
+                            </div>
+                        </div>
+                        <div class="calendar-day"><div class="calendar-day-number">23</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">24</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">25</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">26</div></div>
+                        <div class="calendar-day saturday"><div class="calendar-day-number">27</div></div>
+
+                        <!-- 12월 5주 -->
+                        <div class="calendar-day sunday"><div class="calendar-day-number">28</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">29</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">30</div></div>
+                        <div class="calendar-day"><div class="calendar-day-number">31</div></div>
+                        <div class="calendar-day other-month"><div class="calendar-day-number">1</div></div>
+                        <div class="calendar-day other-month"><div class="calendar-day-number">2</div></div>
+                        <div class="calendar-day other-month saturday"><div class="calendar-day-number">3</div></div>
+                    </div>
+                </div>
+
+                <!-- 결제 현황 섹션 -->
+                <div style="margin-top: 30px;">
+                    <div class="section-header blue">12월 결제현황</div>
+                    <div class="table-container" style="margin-top: 0; border-radius: 0 0 8px 8px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>총승인</th>
+                                    <th>은행인</th>
+                                    <th>은행인취소</th>
+                                    <th>오토리인</th>
+                                    <th>오토리인취소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>22/일</td>
+                                    <td>0</td>
+                                    <td>4,000</td>
+                                    <td>-4,000</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 11월 결제현황 섹션 -->
+                <div style="margin-top: 30px;">
+                    <div class="section-header green">11월 결제현황</div>
+                    <div class="table-container" style="margin-top: 0; border-radius: 0 0 8px 8px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>총승인</th>
+                                    <th>은행인</th>
+                                    <th>은행인취소</th>
+                                    <th>오토리인</th>
+                                    <th>오토리인취소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6" style="padding: 40px; text-align: center; color: #999;">
+                                        데이터가 없습니다
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 월별 결제현황 섹션 -->
+                <div style="margin-top: 30px;">
+                    <div class="section-header orange">월별 결제현황</div>
+                    <div class="table-container" style="margin-top: 0; border-radius: 0 0 8px 8px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>월</th>
+                                    <th>총승인</th>
+                                    <th>은행인</th>
+                                    <th>은행인취소</th>
+                                    <th>오토리인</th>
+                                    <th>오토리인취소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>25/12</td>
+                                    <td>0</td>
+                                    <td>4,000</td>
+                                    <td>-4,000</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 푸터 -->
+                <footer>
+                    <p>📄 원성페이먼츠 사업자 정보 ▼</p>
+                    <p>© 2025 WONSUNG PAYMENTS. All rights reserved.</p>
+                </footer>
+            </div>
         </div>
-
-        <div class="date-range">
-            <input type="date" value="2025-12-16">
-            <span>~</span>
-            <input type="date" value="2025-12-23">
-            <button class="btn btn-primary">검색</button>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>아이디</th>
-                    <th>결제금합계</th>
-                    <th>PG수수료합계</th>
-                    <th>고객환불금합계</th>
-                    <th>추천인합계</th>
-                    <th>정산입금완료</th>
-                    <th>미정산금액</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>9999</td>
-                    <td>2,000원</td>
-                    <td>0원</td>
-                    <td>0원</td>
-                    <td class="text-red">0원</td>
-                    <td class="text-green">0원</td>
-                    <td class="text-blue">0원</td>
-                </tr>
-                <tr style="background-color: #f0f0f0; font-weight: 600;">
-                    <td>합계</td>
-                    <td>2,000원</td>
-                    <td>0원</td>
-                    <td>0원</td>
-                    <td class="text-red">0원</td>
-                    <td class="text-green">0원</td>
-                    <td class="text-blue">0원</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <script src="js/main.js"></script>

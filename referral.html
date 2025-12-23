@@ -3,227 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>추천인관리 - PG 관리자</title>
+    <title>공지사항 - Sunshine Pay 관리자센터</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>추천인관리</h1>
-            <div class="header-right">
-                <span class="user-info">admin님</span>
-                <button class="btn btn-primary">추천인추가</button>
-                <button class="btn btn-secondary">로그아웃</button>
+    <div class="admin-layout">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAY</div>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">수기결제</a></li>
+                </ul>
             </div>
-        </header>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PAYMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#">실시간 결제내역</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">SETTLEMENT</div>
+                <ul class="sidebar-menu">
+                    <li><a href="settlement.html">실시간 정산조회</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">BOARD</div>
+                <ul class="sidebar-menu">
+                    <li><a href="referral.html" class="active">공지사항</a></li>
+                </ul>
+            </div>
+        </aside>
 
-        <div class="tabs">
-            <button class="tab" onclick="location.href='index.html'">내역</button>
-            <button class="tab" onclick="location.href='settlement.html'">정산</button>
-            <button class="tab active" onclick="location.href='referral.html'">추천인</button>
-        </div>
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header>
+                <div class="logo">
+                    <span class="logo-sunshine">Sunshine</span>
+                    <span class="logo-pay">Pay</span>
+                    <span class="logo-subtitle">관리자센터</span>
+                </div>
+                <div class="header-right">
+                    <div class="header-icon">🔍</div>
+                    <div class="header-icon">👤</div>
+                </div>
+            </header>
 
-        <div class="search-area">
-            <select>
-                <option>이름</option>
-                <option>아이디</option>
-                <option>연락처</option>
-            </select>
-            <input type="text" placeholder="검색어 입력">
-            <button class="btn btn-primary">검색</button>
-        </div>
+            <!-- 컨텐츠 영역 -->
+            <div class="content-area">
+                <!-- 페이지 헤더 -->
+                <div class="page-header">
+                    <h2>공지사항</h2>
+                </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>아이디</th>
-                    <th>PG</th>
-                    <th>권한</th>
-                    <th>이름</th>
-                    <th>연락처</th>
-                    <th>PG수수료</th>
-                    <th>영업수수료</th>
-                    <th>고객환도율</th>
-                    <th>상태</th>
-                    <th>관리자메모</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr onclick="location.href='referral-edit.html?id=13'">
-                    <td>13</td>
-                    <td>9999</td>
-                    <td>paysis</td>
-                    <td>일반</td>
-                    <td>신도리PG</td>
-                    <td>010-6512-3040</td>
-                    <td>3%</td>
-                    <td>3.3%</td>
-                    <td>6.8%</td>
-                    <td class="status-active">중지</td>
-                    <td>페이시스 테스트</td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=12'">
-                    <td>12</td>
-                    <td>8888</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>부천노래방</td>
-                    <td>010-5612-5313</td>
-                    <td>5%</td>
-                    <td>6.2%</td>
-                    <td>8.5%</td>
-                    <td class="status-active">사용</td>
-                    <td>퀵 이재욱</td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=11'">
-                    <td>11</td>
-                    <td>pay100</td>
-                    <td>celpay</td>
-                    <td>일반</td>
-                    <td>김우영</td>
-                    <td>010-4462-7477</td>
-                    <td>4.4%</td>
-                    <td>4.5%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td>celpay 결제 01 카드실물먼제</td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=10'">
-                    <td>10</td>
-                    <td>10</td>
-                    <td>celpay</td>
-                    <td>일반</td>
-                    <td>부산테스트</td>
-                    <td>010-3990-1020</td>
-                    <td>4%</td>
-                    <td>4.3%</td>
-                    <td>9%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=9'">
-                    <td>9</td>
-                    <td>09</td>
-                    <td>celpay</td>
-                    <td>일반</td>
-                    <td>테스팅</td>
-                    <td>010-1234-1234</td>
-                    <td>3%</td>
-                    <td>4%</td>
-                    <td>10%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=8'">
-                    <td>8</td>
-                    <td>08</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>돌리</td>
-                    <td>010-7577-0789</td>
-                    <td>3.7%</td>
-                    <td>4%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=7'">
-                    <td>7</td>
-                    <td>7777</td>
-                    <td>celpay</td>
-                    <td>일반</td>
-                    <td>부산</td>
-                    <td>010-3990-1020</td>
-                    <td>3.3%</td>
-                    <td>4%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=6'">
-                    <td>6</td>
-                    <td>04</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>신도림</td>
-                    <td>010-6345-6670</td>
-                    <td>3.5%</td>
-                    <td>5%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=5'">
-                    <td>5</td>
-                    <td>03</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>멀티페이</td>
-                    <td>010-7417-5995</td>
-                    <td>3.5%</td>
-                    <td>4.5%</td>
-                    <td>9.5%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=4'">
-                    <td>4</td>
-                    <td>02admin</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>이순신</td>
-                    <td>010-1000-1000</td>
-                    <td>3.5%</td>
-                    <td>4.5%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=3'">
-                    <td>3</td>
-                    <td>02</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>대구</td>
-                    <td>010254871234</td>
-                    <td>3.5%</td>
-                    <td>4.5%</td>
-                    <td>8%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=2'">
-                    <td>2</td>
-                    <td>01</td>
-                    <td>onenet</td>
-                    <td>일반</td>
-                    <td>김홍섭</td>
-                    <td>010-3990-1020</td>
-                    <td>3.5%</td>
-                    <td>4.6%</td>
-                    <td>9.6%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-                <tr onclick="location.href='referral-edit.html?id=1'">
-                    <td>1</td>
-                    <td>admin</td>
-                    <td>paysis</td>
-                    <td class="text-red">관리자</td>
-                    <td>관리자</td>
-                    <td>010-1111-1111</td>
-                    <td>2%</td>
-                    <td>3%</td>
-                    <td>10%</td>
-                    <td class="status-active">사용</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+                <!-- 검색 영역 -->
+                <div class="search-area">
+                    <select>
+                        <option>검색</option>
+                        <option>제목검색</option>
+                        <option>내용검색</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button class="search-button">🔍 검색</button>
+                </div>
 
-        <div class="pagination">
-            <a href="#" class="active">1</a>
+                <!-- 테이블 -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" style="padding: 60px; text-align: center; color: #999;">
+                                    <div style="font-size: 48px; margin-bottom: 20px;">📋</div>
+                                    <div style="font-size: 16px;">조회된 내역이 없습니다.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 푸터 -->
+                <footer>
+                    <p>📄 원성페이먼츠 사업자 정보 ▼</p>
+                    <p>© 2025 WONSUNG PAYMENTS. All rights reserved.</p>
+                </footer>
+            </div>
         </div>
     </div>
 
