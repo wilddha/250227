@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 내역 수정 - PG 관리자</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>결제 내역 수정</h1>
+            <div class="header-right">
+                <button class="btn btn-secondary">로그아웃</button>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active">내역</button>
+            <button class="tab">정산</button>
+            <button class="tab">추천인</button>
+        </div>
+
+        <div class="section-spacing">
+            <div class="section-header blue">▼ 추천인 정보</div>
+            <div class="info-grid">
+                <div class="label">추천인 ID</div>
+                <div class="value">9999</div>
+
+                <div class="label">수수료</div>
+                <div class="value">2 원 (0.1%)</div>
+
+                <div class="label">이체수수료</div>
+                <div class="value">330 원</div>
+
+                <div class="label">입금금액</div>
+                <div class="value text-red">-328 원 <span class="note">(이체수수료 제외)</span></div>
+
+                <div class="label">입금 은행</div>
+                <div class="value">
+                    <input type="text" value="한국">
+                </div>
+
+                <div class="label">계좌번호</div>
+                <div class="value">
+                    <input type="text" value="123456">
+                </div>
+
+                <div class="label">예금주명</div>
+                <div class="value">
+                    <input type="text" value="이순신">
+                </div>
+
+                <div class="label">연락처</div>
+                <div class="value">010-6512-3040</div>
+
+                <div class="label">처리 상태</div>
+                <div class="value with-button">
+                    <select>
+                        <option>처리전</option>
+                        <option>입금완료</option>
+                        <option>보류</option>
+                    </select>
+                    <button class="btn btn-primary">처리</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-spacing">
+            <div class="section-header green">▼ 고객 정보</div>
+            <div class="info-grid">
+                <div class="label">카드번호</div>
+                <div class="value">****-4191</div>
+
+                <div class="label">결제금액</div>
+                <div class="value">2,000 원</div>
+
+                <div class="label">이체수수료</div>
+                <div class="value">330 원</div>
+
+                <div class="label">환불금액</div>
+                <div class="value">1,602 원 (3.4%) <span class="note">(+수출,이체수수료 제외)</span></div>
+
+                <div class="label">환불 은행</div>
+                <div class="value">
+                    <input type="text" value="농협">
+                </div>
+
+                <div class="label">환불 계좌번호</div>
+                <div class="value">
+                    <input type="text" value="1234-1234-1234">
+                </div>
+
+                <div class="label">환불 예금주명</div>
+                <div class="value">
+                    <input type="text" value="홍길동">
+                </div>
+
+                <div class="label">전화번호</div>
+                <div class="value">
+                    <input type="text" value="01012341234">
+                </div>
+
+                <div class="label">처리 상태</div>
+                <div class="value with-button">
+                    <select>
+                        <option>처리전</option>
+                        <option>입금완료</option>
+                        <option>보류</option>
+                    </select>
+                    <button class="btn btn-success">처리</button>
+                </div>
+
+                <div class="label">메모</div>
+                <div class="value">
+                    <textarea placeholder="메모를 입력하세요"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-spacing">
+            <div class="section-header orange">관리자 메모</div>
+            <div style="padding: 20px; border: 1px solid #ddd; border-top: none;">
+                <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;" placeholder="관리자 메모를 입력하세요"></textarea>
+                <div style="text-align: right; margin-top: 10px;">
+                    <button class="btn btn-warning">저장</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-buttons">
+            <button class="btn btn-secondary" onclick="location.href='index.html'">목록</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
