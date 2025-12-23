@@ -1,6 +1,70 @@
 // PG 관리자 시스템 JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // 햄버거 메뉴 토글 기능
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarOverlay = document.querySelector('.sidebar-overlay');
+
+    if (hamburgerMenu && sidebar && sidebarOverlay) {
+        // 햄버거 메뉴 클릭 이벤트
+        hamburgerMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleMenu();
+        });
+
+        // 오버레이 클릭 시 메뉴 닫기
+        sidebarOverlay.addEventListener('click', function() {
+            closeMenu();
+        });
+
+        // 사이드바 메뉴 링크 클릭 시 메뉴 닫기 (모바일에서만)
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // ESC 키로 메뉴 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
+
+    // 메뉴 토글 함수
+    function toggleMenu() {
+        hamburgerMenu.classList.toggle('active');
+        sidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+
+        // body 스크롤 잠금/해제
+        if (sidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // 메뉴 닫기 함수
+    function closeMenu() {
+        hamburgerMenu.classList.remove('active');
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // 창 크기 변경 시 데스크톱에서 메뉴 상태 초기화
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
+
     // 테이블 행 클릭 이벤트 (이미 HTML에서 onclick으로 처리됨)
 
     // 검색 기능
