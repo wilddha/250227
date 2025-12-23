@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     background-color: #f5f7fa;
@@ -16,6 +25,8 @@ body {
 .admin-layout {
     display: flex;
     min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* 사이드바 */
@@ -234,6 +245,8 @@ header {
     align-items: center;
     color: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .page-header::before {
@@ -351,31 +364,39 @@ header {
 /* 검색 영역 */
 .search-area {
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
     align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .search-area select,
 .search-area input {
-    padding: 10px 15px;
+    padding: 8px 10px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .search-area select {
-    min-width: 150px;
+    min-width: 100px;
     background-color: white;
 }
 
-.search-area input {
+.search-area input[type="date"] {
+    width: 130px;
+}
+
+.search-area input[type="text"] {
     flex: 1;
-    max-width: 400px;
+    min-width: 120px;
+    max-width: 200px;
 }
 
 .search-area input:focus,
@@ -385,14 +406,16 @@ header {
 }
 
 .search-button {
-    padding: 10px 30px;
+    padding: 8px 20px;
     background-color: #3b82f6;
     color: white;
     border: none;
     border-radius: 4px;
     font-weight: 500;
+    font-size: 13px;
     cursor: pointer;
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
 .search-button:hover {
@@ -422,6 +445,23 @@ header {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+.filter-tabs-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.filter-tabs-4 .filter-tab {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
 }
 
 .filter-tab {
@@ -827,6 +867,10 @@ footer {
     .stats-grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .filter-tabs-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -850,6 +894,8 @@ footer {
     /* 메인 컨텐츠 왼쪽 마진 제거 */
     .main-content {
         margin-left: 0;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     /* 헤더 패딩 조정 */
@@ -858,13 +904,17 @@ footer {
     }
 
     .content-area {
-        padding: 15px;
+        padding: 10px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .page-header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px 20px;
+        padding: 12px 15px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .page-header::before {
@@ -881,12 +931,30 @@ footer {
         padding: 15px;
     }
 
-    .search-area input {
-        max-width: 100%;
+    .search-area input,
+    .search-area select,
+    .search-area button {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        box-sizing: border-box;
     }
 
-    .search-area select {
-        min-width: 100%;
+    .search-area input[type="date"],
+    .search-area input[type="text"] {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .search-area span {
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100% !important;
+        padding: 12px 20px !important;
     }
 
     .date-range {
@@ -900,7 +968,13 @@ footer {
 
     .filter-tab {
         font-size: 13px;
-        padding: 8px 15px;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .filter-tabs-4 .filter-tab {
+        width: 100%;
     }
 
     .info-grid {
@@ -911,28 +985,52 @@ footer {
         border-right: none;
     }
 
-    table {
-        display: block;
+    .table-container {
         overflow-x: auto;
-        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        width: 100%;
+        min-width: 100%;
         font-size: 12px;
     }
 
     table th,
     table td {
         padding: 10px 8px;
+        white-space: nowrap;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .stats-grid-4 {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .filter-tabs-4 {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 10px 12px;
     }
 
     .stat-card-value {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    .stat-card-title {
+        font-size: 12px;
+    }
+
+    .stat-card-subtitle {
+        font-size: 11px;
     }
 
     .calendar-day {
