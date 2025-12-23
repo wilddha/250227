@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수기결제 내역 - King Pay 관리자센터</title>
+    <title>실시간 결제내역 - King Pay 관리자센터</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,13 +16,13 @@
             <div class="sidebar-section">
                 <div class="sidebar-section-title">PAY</div>
                 <ul class="sidebar-menu">
-                    <li><a href="index.html" class="active">수기결제</a></li>
+                    <li><a href="index.html">수기결제</a></li>
                 </ul>
             </div>
             <div class="sidebar-section">
                 <div class="sidebar-section-title">PAYMENT</div>
                 <ul class="sidebar-menu">
-                    <li><a href="payment.html">실시간 결제내역</a></li>
+                    <li><a href="payment.html" class="active">실시간 결제내역</a></li>
                 </ul>
             </div>
             <div class="sidebar-section">
@@ -65,15 +65,31 @@
             <div class="content-area">
                 <!-- 페이지 헤더 -->
                 <div class="page-header">
-                    <h2>수기결제 내역</h2>
+                    <h2>실시간 결제내역</h2>
                 </div>
 
-                <!-- 필터 탭 -->
-                <div class="filter-tabs">
-                    <div class="filter-tab active">승인 0건 / 0원</div>
-                    <div class="filter-tab">실패 0건</div>
-                    <div class="filter-tab">취소 0건 / 0원</div>
-                    <div class="filter-tab">전체 0건</div>
+                <!-- 통계 카드 -->
+                <div class="stats-grid">
+                    <div class="stat-card purple">
+                        <div class="stat-card-title">오늘 결제</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">승인 0건 / 취소 0건</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-card-title">12월 누적</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">승인 4,000 / 취소 -4,000</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-title">오늘 승인</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">0건</div>
+                    </div>
+                    <div class="stat-card red">
+                        <div class="stat-card-title">오늘 취소</div>
+                        <div class="stat-card-value">0원</div>
+                        <div class="stat-card-subtitle">0건</div>
+                    </div>
                 </div>
 
                 <!-- 검색 영역 -->
@@ -82,28 +98,11 @@
                     <span>~</span>
                     <input type="date" value="20251223">
                     <select>
-                        <option>오늘</option>
-                        <option>이번달</option>
-                        <option>이번주</option>
-                        <option>지난주</option>
-                        <option>지난달</option>
-                    </select>
-                    <select>
                         <option>전체</option>
-                        <option>승인번호</option>
-                        <option>상품명</option>
-                        <option>구매자연락처</option>
-                        <option>구매자명</option>
+                        <option>승인</option>
+                        <option>취소</option>
                     </select>
                     <input type="text" placeholder="검색어 입력">
-                    <select>
-                        <option>전체</option>
-                        <option>승인반호</option>
-                        <option>상품명</option>
-                        <option>구매자</option>
-                        <option>카드번호</option>
-                        <option>관리</option>
-                    </select>
                     <button class="search-button">검색</button>
                 </div>
 
@@ -113,23 +112,20 @@
                         <thead>
                             <tr>
                                 <th>번호</th>
-                                <th>주문번호</th>
-                                <th>상품명</th>
-                                <th>금액</th>
-                                <th>카드사</th>
-                                <th>구매자연락처</th>
+                                <th>결제일시</th>
+                                <th>상점명</th>
+                                <th>결제수단</th>
+                                <th>결제금액</th>
                                 <th>상태</th>
                                 <th>승인번호</th>
-                                <th>요청일시</th>
-                                <th>취소일시</th>
-                                <th>관리</th>
+                                <th>구매자</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="11" style="padding: 60px; text-align: center; color: #999;">
-                                    <div style="font-size: 48px; margin-bottom: 20px;">📋</div>
-                                    <div style="font-size: 16px;">조회된 내역이 없습니다.</div>
+                                <td colspan="8" style="padding: 60px; text-align: center; color: #999;">
+                                    <div style="font-size: 48px; margin-bottom: 20px;">💳</div>
+                                    <div style="font-size: 16px;">조회된 결제 내역이 없습니다.</div>
                                 </td>
                             </tr>
                         </tbody>
