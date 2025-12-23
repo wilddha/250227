@@ -220,7 +220,7 @@ header {
 
 /* 컨텐츠 영역 */
 .content-area {
-    padding: 30px;
+    padding: 10px 30px 30px 30px;
     background-color: #f5f7fa;
     min-height: calc(100vh - 60px);
 }
@@ -229,7 +229,7 @@ header {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     padding: 20px 30px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     color: white;
@@ -299,13 +299,17 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.stats-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .stat-card {
     background: white;
     border-radius: 8px;
-    padding: 20px;
+    padding: 12px 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-left: 4px solid #3b82f6;
 }
@@ -329,14 +333,14 @@ header {
 .stat-card-title {
     font-size: 13px;
     color: #6c757d;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .stat-card-value {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .stat-card-subtitle {
@@ -349,7 +353,7 @@ header {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     display: flex;
     gap: 10px;
@@ -417,7 +421,7 @@ header {
 .filter-tabs {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .filter-tab {
@@ -442,15 +446,16 @@ header {
 
 /* 섹션 헤더 */
 .section-header {
-    padding: 15px 20px;
+    padding: 10px 15px;
     color: white;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     border-radius: 8px 8px 0 0;
+    line-height: 1.2;
 }
 
 .section-header.blue {
@@ -491,9 +496,10 @@ table {
 
 table th,
 table td {
-    padding: 15px 12px;
+    padding: 6px 10px;
     text-align: center;
     border-bottom: 1px solid #dee2e6;
+    line-height: 1.2;
 }
 
 table th {
@@ -506,7 +512,7 @@ table th {
 }
 
 table td {
-    font-size: 14px;
+    font-size: 13px;
     color: #333;
 }
 
@@ -817,6 +823,10 @@ footer {
     .stats-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+
+    .stats-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -914,6 +924,10 @@ footer {
     }
 
     .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid-4 {
         grid-template-columns: 1fr;
     }
 
